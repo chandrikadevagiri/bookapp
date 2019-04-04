@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <% include partials/head.ejs %>
+    <style>
+        img{
+            width:100px;
+            float:left;
+            border-radius:50%;
+        }
+        h3{
+            text-align:center;
+            font-style: oblique;
+        }
+        h4{
+            text-align:right;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <% include partials/menu.ejs %>
+    <br/><br/><br/>
+    <% include partials/headline.ejs %>
+    <br/>
+    <div class="container">
+      <div class="row">
+         <div col-md-12>
+             <div class="panel">
+                 <div class="panel-body">
+                     <% for(let i=0;i<books.length;i++){%>
+                      <div class="row">
+                          <br/><br/><br/>
+                          <div class="col-md-2 col-sm-3 text-center">
+                              <a class="story-title" href="#"><img src="<%=books[i].img%>"/></a>
+                          </div>
+                          <div class="col-md-10 col-sm-9">
+                              <h3><%=books[i].name%></h3>
+                              <div class="row">
+                                  <div class="col-md-2 col-sm-9">
+                                       <!----<h4><%=books[i].author%></h4>-->
+                                  </div>
+                                  <div class="col-md-10 col-sm-3">
+                                        <p>by<br/><%=books[i].author%></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <br/><br/><br/>
+                     <%}%>
+                 </div>
+             </div>
+         </div>
+      </div>
+      <!----<% for(let i=0;i<books.length;i++){%>
+     <div class="container">
+         <div class="row">
+             <br/>
+             <div class="col-md-2 col-sm-3">
+                    <img src="<%=books[i].img%>" alt="image"/>
+             </div>
+             <br/><br/><br/><br/>
+             <div class="col-md-10 col-sm-9">
+                    <h3><%books[i].name%></h3>
+             </div>
+             <div class="row">
+                    <div class="col-xs-9">
+                        <h4><span class="label label-default"><%books[i].author%></span></h4>
+                    </div>
+                    <div class="col-xs-3">
+
+                    </div>
+         </div>
+        
+     </div>
+     <%}%>-->
+     <% include partials/jsIncludes.ejs %>
+  </body>
+</html>
